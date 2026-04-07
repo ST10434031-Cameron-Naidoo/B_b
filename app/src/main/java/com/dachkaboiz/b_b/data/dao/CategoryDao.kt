@@ -6,13 +6,13 @@ import com.dachkaboiz.b_b.data.model.Category
 @Dao
 interface CategoryDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(category: Category)
+    suspend fun insertCategory(category: Category)
 
     @Update
-    suspend fun update(category: Category)
+    suspend fun updateCategory(category: Category)
 
     @Delete
-    suspend fun delete(category: Category)
+    suspend fun deleteCategory(category: Category)
 
     //@Query("SELECT * FROM categories ORDER BY name DESC")
     //fun getAllCategories(): Flow<List<Category>>
