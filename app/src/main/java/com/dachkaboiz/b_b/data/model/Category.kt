@@ -16,12 +16,15 @@ import androidx.room.ForeignKey
     )
 data class Category(
     @PrimaryKey
+    //REQUIRED
     val id: Int,
     val accountUsername: String,
     val name: String,
     val iconName: String,
-    val description: String,
-    val minGoal: Double? = null, //optional
-    val maxGoal: Double? = null, //optional
-    val mainCategoryId: Int? = null //depends on if has a subcategory
+
+    //OPTIONAL
+    val description: String? = null,
+    val minGoal: Double? = null,
+    val maxGoal: Double? = null,
+    val mainCategoryId: Int? = null 
 )
