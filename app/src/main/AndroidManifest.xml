@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B_b">
         <activity
-            android:name=".data.SignupActivity"
+            android:name=".ui.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".data.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

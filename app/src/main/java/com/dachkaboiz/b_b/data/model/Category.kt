@@ -15,6 +15,7 @@ import androidx.room.ForeignKey
     ]
     )
 data class Category(
+    @PrimaryKey
     val id: Int,
     val accountUsername: String,
     val name: String,
