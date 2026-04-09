@@ -26,5 +26,5 @@ data class Category(
     val description: String? = null,
     val minGoal: Double? = null,
     val maxGoal: Double? = null,
-    val mainCategoryId: Int? = null 
+    val mainCategoryId: Int? = null
 )
