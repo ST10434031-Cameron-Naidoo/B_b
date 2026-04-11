@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B_b">
         <activity
+            android:name=".ui.CategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SignupActivity"
             android:exported="false" />
         <activity
