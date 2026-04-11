@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A2D4D">
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/spinner_background"
+        android:text="ADD \nSUBCATEGORY"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerParentCategory"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/spinner_background"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle" />
+
+    <EditText
+        android:id="@+id/etSubcategoryName"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/spinner_background"
+        android:hint="Subcategory Name*"
+        android:padding="12dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="@id/spinnerParentCategory"
+        app:layout_constraintStart_toStartOf="@id/spinnerParentCategory"
+        app:layout_constraintTop_toBottomOf="@id/spinnerParentCategory" />
+
+    <LinearLayout
+        android:id="@+id/layoutSubIcon"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/spinner_background"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="@id/spinnerParentCategory"
+        app:layout_constraintStart_toStartOf="@id/spinnerParentCategory"
+        app:layout_constraintTop_toBottomOf="@id/etSubcategoryName">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Icon*"
+            android:textColor="#555555"
+            android:paddingStart="4dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etSubDescription"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/spinner_background"
+        android:hint="Description"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="@id/spinnerParentCategory"
+        app:layout_constraintStart_toStartOf="@id/spinnerParentCategory"
+        app:layout_constraintTop_toBottomOf="@id/layoutSubIcon" />
+
+    <EditText
+        android:id="@+id/etSubMinGoal"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/spinner_background"
+        android:hint="Min goal (optional)"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="@id/spinnerParentCategory"
+        app:layout_constraintStart_toStartOf="@id/spinnerParentCategory"
+        app:layout_constraintTop_toBottomOf="@id/etSubDescription" />
+
+    <EditText
+        android:id="@+id/etSubMaxGoal"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/spinner_background"
+        android:hint="Max goal (optional)"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="@id/spinnerParentCategory"
+        app:layout_constraintStart_toStartOf="@id/spinnerParentCategory"
+        app:layout_constraintTop_toBottomOf="@id/etSubMinGoal" />
+
+    <Button
+        android:id="@+id/btnSubCancel"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#C64136"
+        android:text="CANCEL"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSubAdd"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSubAdd"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1B4D66"
+        android:text="ADD"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/btnSubCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSubCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
