@@ -210,5 +210,35 @@
         visibility="gone" = hidden by default, zero space used.
     -->
 
+    <!--
+         EXPENSE LIST (RecyclerView)
+         Each row is one instance of item_expense.xml
+         inflated by ExpenseAdapter.kt.
+
+         layout_height="0dp" + layout_weight="1":
+         Fills ALL vertical space between the sort controls
+         above and the Add Expense button below.
+
+         clipToPadding="false":
+         Allows the last expense card to scroll up above the
+         Add button's padding area so it is never hidden
+         behind the button when scrolled to the very bottom.
+          -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"/>
+    
+    <!--
+        The Activity must set a LayoutManager in code or
+        the list will not display anything:
+        rvExpenses.layoutManager = LinearLayoutManager(this)
+        rvExpenses.adapter = expenseAdapter
+    -->
 
 </LinearLayout>
