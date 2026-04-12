@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="ADD CATEGORY"
+    android:gravity="center"
+    android:padding="10dp"
+    android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/etCategoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="Category Name*"
+        android:inputType="text"
+        android:layout_marginHorizontal="20dp"/>
+    <EditText
+        android:id="@+id/etCategoryIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="ICON*"
+        android:layout_marginHorizontal="20dp"
+        />
+    <EditText
+        android:id="@+id/etCategoryDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Description*"
+        android:inputType="text"
+        android:layout_marginHorizontal="20dp"/>
+
+    <EditText
+        android:id="@+id/etCategoryMinGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Minimum Goal(Optional)"
+        android:inputType="text"
+        android:layout_marginHorizontal="20dp"/>
+
+    <EditText
+        android:id="@+id/etCategoryMaxGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Maximum Goal(Optional)"
+        android:inputType="text"
+        android:layout_marginHorizontal="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btnCategoryCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="CANCEL"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"/>
+        <Button
+            android:id="@+id/btnCategoryAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ADD"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+</LinearLayout>
