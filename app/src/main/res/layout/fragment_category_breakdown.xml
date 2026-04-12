@@ -7,11 +7,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Categories"
+        android:text="Category Breakdown"
+        android:textAllCaps="true"
         android:gravity="center"
         android:textSize="18sp"
-        android:layout_weight="100"
-        android:textAllCaps="true"/>
+        android:layout_weight="100"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -86,6 +86,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="100"
-        android:text="Add Category"
+        android:text="Add SubCategory"
         android:textAllCaps="true"/>
+
+
 </LinearLayout>
