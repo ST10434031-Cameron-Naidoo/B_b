@@ -98,4 +98,76 @@
             android:textSize="11sp"/>
 
     </LinearLayout>
+
+    <!--
+         SORT RADIO BUTTONS
+         Three options per UI mockup: A-Z, First Added, Last Added.
+         HorizontalScrollView wraps them so they scroll on
+         narrow screens without getting cut off.
+
+         When the user selects a button, the Activity calls:
+         viewModel.setSortOrder(SortOrder.AZ) etc.
+         The StateFlow re-sorts and the adapter updates.
+          -->
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="?attr/colorSurface"
+        android:paddingBottom="8dp">
+
+        <RadioGroup
+            android:id="@+id/rgSortOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp">
+            
+            <!--
+                RadioGroup: only ONE option can be selected at
+                a time. Selecting "Last Added" automatically
+                deselects "A-Z" — built into RadioGroup.
+            -->
+
+            <!--
+                SORT OPTION 1: Alphabetical
+                checked="true" = default selection on screen open.
+            -->
+            <RadioButton
+                android:id="@+id/rbSortAZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A-Z"
+                android:checked="true"
+                android:textSize="13sp"/>
+
+            <!--
+                SORT OPTION 2: Oldest expense first
+            -->
+            <RadioButton
+                android:id="@+id/rbSortFirstAdded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Added"
+                android:layout_marginStart="8dp"
+                android:textSize="13sp"/>
+
+            <!--
+                SORT OPTION 3: Newest expense first
+                Most useful for users who want to see
+                their most recent expenses at the top.
+            -->
+            <RadioButton
+                android:id="@+id/rbSortLastAdded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Added"
+                android:layout_marginStart="8dp"
+                android:textSize="13sp"/>
+
+        </RadioGroup>
+    </HorizontalScrollView>
 </LinearLayout>
