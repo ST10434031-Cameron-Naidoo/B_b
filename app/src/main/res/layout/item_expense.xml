@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardExpenseItem"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="?attr/colorSurface">
+
+    <!--
+        MaterialCardView:
+        Gives each expense entry a rounded card appearance
+        with a subtle shadow beneath it.
+
+        cardBackgroundColor="?attr/colorSurface"
+        Uses the theme surface colour — automatically white
+        in light mode and dark grey in dark mode. Never
+        hardcode white (#FFFFFF) here or dark mode breaks.
+
+        android:id="@+id/cardExpenseItem"
+        The adapter uses this ID to attach click listeners
+        for tap (view detail) and long press (delete).
+    -->
+
+    
 
 </com.google.android.material.card.MaterialCardView>
