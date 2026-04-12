@@ -165,6 +165,28 @@
 
     </LinearLayout>
 
+        <!--
+             RIGHT: RECEIPT ICON
+             Only visible when expense.imagePath is not null.
+             Hidden by default — adapter shows it conditionally:
+
+             if (expense.imagePath != null) {
+                 ivReceiptIcon.visibility = View.VISIBLE
+             } else {
+                 ivReceiptIcon.visibility = View.GONE
+             }
+
+             visibility="gone" = invisible AND takes zero space.
+             Cards without photos have no empty gap on the right.
+              -->
+        <ImageView
+            android:id="@+id/ivReceiptIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_receipt"
+            android:contentDescription="Photo attached to this expense"
+            android:visibility="gone"/>
+
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
