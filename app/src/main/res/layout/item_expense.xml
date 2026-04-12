@@ -82,6 +82,89 @@
 
         </FrameLayout>
 
+    <!--
+         MIDDLE: EXPENSE TEXT DETAILS
+         layout_width="0dp" + layout_weight="1" makes
+         this column take ALL remaining horizontal space
+         between the icon (46dp) and receipt icon (20dp).
+         Four rows: category name, amount, date, description.
+          -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp">
+
+        <!--
+                CATEGORY NAME
+                e.g. "Entertainment", "Food", "Transport"
+                Bold — the primary label for the expense.
+                Set by adapter: tvExpenseCategoryName.text = category.name
+            -->
+        <TextView
+            android:id="@+id/tvExpenseCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category Name"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <!--
+                ENTRY AMOUNT
+                e.g. "R 383" or "R 250.00"
+                Formatted by adapter: "R %.2f".format(expense.amount)
+                colorPrimary makes the amount stand out visually.
+                Per mockup: amount shows on same line area as name.
+            -->
+        <TextView
+            android:id="@+id/tvExpenseAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R 0.00"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginTop="2dp"/>
+
+        <!--
+                DATE ADDED
+                e.g. "Date Added: 12-05-2026"
+                Adapter formats the stored Long timestamp:
+                "Date Added: " + SimpleDateFormat("dd-MM-yyyy").format(date)
+                colorOnSurfaceVariant = muted secondary text colour.
+            -->
+        <TextView
+            android:id="@+id/tvExpenseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Added: --"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginTop="2dp"/>
+
+        <!--
+                DESCRIPTION
+                e.g. "Netflix Subscription", "Lunch at Nandos"
+                Optional — may be empty string.
+                maxLines="1" + ellipsize="end" truncates long text:
+                "Lunch at the new restaurant in Sand..."
+            -->
+        <TextView
+            android:id="@+id/tvExpenseDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="12sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+    </LinearLayout>
+
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
