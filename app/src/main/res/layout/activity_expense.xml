@@ -125,7 +125,7 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:paddingTop="8dp">
-            
+
             <!--
                 RadioGroup: only ONE option can be selected at
                 a time. Selecting "Last Added" automatically
@@ -170,4 +170,45 @@
 
         </RadioGroup>
     </HorizontalScrollView>
+
+    <!-- Thin visual divider between sort controls and the list -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorOutlineVariant"/>
+
+    <!--
+         EMPTY STATE MESSAGE
+         Shown when the user has no expenses logged yet.
+         Hidden when the list has items.
+
+         The Activity controls this:
+         if (list.isEmpty()) {
+             tvEmptyState.visibility = View.VISIBLE
+             rvExpenses.visibility = View.GONE
+         } else {
+             tvEmptyState.visibility = View.GONE
+             rvExpenses.visibility = View.VISIBLE
+         }
+          -->
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="No expenses yet.\nTap Add Expense below to get started."
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:padding="40dp"
+        android:visibility="gone"/>
+    <!--
+        layout_height="0dp" + layout_weight="1":
+        When visible, it fills all space between the sort
+        bar and Add button — the message is centred on screen.
+        visibility="gone" = hidden by default, zero space used.
+    -->
+
+
 </LinearLayout>
