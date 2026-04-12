@@ -22,47 +22,68 @@
             android:text="SORT BY"/>
 
         <RadioGroup
+            android:id="@+id/rgCategorySort"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
 
             <RadioButton
+                android:id="@+id/rbCategorySortAZ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="A - Z" />
 
             <RadioButton
+                android:id="@+id/rbCategorySortLastUsed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Last used" />
+                android:text="Last Used" />
 
             <RadioButton
+                android:id="@+id/rbCategorySortMostUsed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Most Used" />
         </RadioGroup>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-        <DatePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"/>
-        <DatePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FROM" />
+
+            <DatePicker
+                android:id="@+id/dpCategoryStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TO" />
+
+            <DatePicker
+                android:id="@+id/dpCategoryEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
         </LinearLayout>
     </LinearLayout>
     <ListView
+        android:id="@+id/lvCategories"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="600"/>
     <Button
+        android:id="@+id/btnAddCategory"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="100"/>
+        android:layout_weight="100"
+        android:text="Add Category"/>
 </LinearLayout>
