@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="bg_blue_top">#0D5081</color>
+    <color name="bg_blue_bottom">#7AA6C6</color>
+
+    <color name="card_white">#E1F0F9</color> <color name="accent_dark_blue">#003366</color> <color name="text_link_blue">#005B96</color> <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
     <color name="brand_green">#4CAF50</color>
     <color name="brand_blue">#2196F3</color>
-
-    <color name="app_background">#F5F5F5</color>
-    <color name="card_surface">#FFFFFF</color>
-
-    <color name="text_primary">#000000</color>
-    <color name="text_secondary">#757575</color>
-
-    <color name="progress_track">#E0E0E0</color>
 </resources>
