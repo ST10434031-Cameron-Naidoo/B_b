@@ -4,10 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
+    android:layout_marginHorizontal="20dp"
     android:layout_marginVertical="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    app:cardBackgroundColor="@color/card_white"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,82 +16,88 @@
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/ivCategoryIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_entertainment"
+            android:id="@+id/ivGoalIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvCategoryName"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvGoalTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:text="Entertainment"
-            android:textSize="18sp"
+            android:textColor="@color/text_link_blue"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/ivCategoryIcon"
-            app:layout_constraintTop_toTopOf="@id/ivCategoryIcon"
-            app:layout_constraintBottom_toBottomOf="@id/ivCategoryIcon" />
+            app:layout_constraintBottom_toBottomOf="@id/ivGoalIcon"
+            app:layout_constraintEnd_toStartOf="@+id/tvCurrentAmountLabel"
+            app:layout_constraintStart_toEndOf="@id/ivGoalIcon"
+            app:layout_constraintTop_toTopOf="@id/ivGoalIcon" />
 
         <TextView
-            android:id="@+id/tvTotalSpent"
+            android:id="@+id/tvCurrentAmountLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="R380"
-            android:textSize="18sp"
+            android:gravity="end"
+            android:text="Total Spent:\nR380"
+            android:textColor="@color/text_link_blue"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvCategoryName" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
             android:id="@+id/goalProgressBar"
-            style="?android:attr/progressBarStyleHorizontal"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:progress="75"
-            android:progressTint="#4CAF50"
-            app:layout_constraintTop_toBottomOf="@id/ivCategoryIcon"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:progress="70"
+            android:progressTint="@color/accent_dark_blue"
+            android:progressBackgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/ivGoalIcon" />
 
         <TextView
-            android:id="@+id/tvMinGoal"
+            android:id="@+id/tvMinLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Min: R200"
-            android:textSize="12sp"
-            android:textColor="#757575"
-            app:layout_constraintTop_toBottomOf="@id/goalProgressBar"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginTop="6dp"
+            android:text="Min Goal\nR100"
+            android:textColor="@color/text_link_blue"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goalProgressBar" />
 
         <TextView
-            android:id="@+id/tvMaxGoal"
+            android:id="@+id/tvTargetAmountLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Max: R500"
-            android:textSize="12sp"
-            android:textColor="#757575"
-            app:layout_constraintTop_toBottomOf="@id/goalProgressBar"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:layout_marginTop="6dp"
+            android:gravity="end"
+            android:text="Max Goal\nR500"
+            android:textColor="@color/text_link_blue"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goalProgressBar" />
 
         <TextView
             android:id="@+id/tvBreakdownLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="View Category Goal Breakdown"
-            android:textColor="#2196F3"
+            android:layout_marginTop="10dp"
+            android:text="View Category Goals Breakdown ⌵"
+            android:textColor="@color/text_link_blue"
             android:textSize="12sp"
-            android:textStyle="italic"
-            app:layout_constraintTop_toBottomOf="@id/tvMinGoal"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tvMinLabel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
