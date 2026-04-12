@@ -76,11 +76,15 @@
 
         </LinearLayout>
     </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="100"/>
     <ListView
         android:id="@+id/lvCategories"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="600"/>
+        android:layout_weight="500"/>
     <Button
         android:id="@+id/btnAddCategory"
         android:layout_width="match_parent"
