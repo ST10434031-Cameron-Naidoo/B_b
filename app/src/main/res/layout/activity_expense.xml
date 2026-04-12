@@ -1,7 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
+<!--
+    WHAT THIS FILE IS:
+    Full screen layout for the Expenses HOME screen.
+    This is the default landing screen after login per
+    the design doc section 4.2.1.
+    -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorBackground">
+
+    <!--
+        Root LinearLayout: vertical orientation means every
+        child stacks top to bottom filling the full screen.
+    -->
+
+    <!--
+         HEADER ROW
+         Left: screen title "EXPENSES"
+         Right: FROM and TO date filter buttons
+         Matches the top bar visible in the UI mockup.
+          -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="?attr/colorSurface"
+        android:elevation="4dp">
+
+        <!--
+            elevation="4dp": header bar casts a shadow over
+            the list below it — creates clear visual separation
+            between the fixed header and scrolling content.
+        -->
+
+        <!--
+            SCREEN TITLE
+            layout_weight="1" pushes the date buttons to the right.
+        -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="EXPENSES"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <!--
+            FROM DATE LABEL + BUTTON
+            Tapping btnDateFrom opens a MaterialDatePicker
+            in the Activity. The Activity updates the button
+            text with the selected date.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FROM"
+            android:textSize="11sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginEnd="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDateFrom"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10-06-2026"
+            android:textSize="11sp"
+            android:layout_marginEnd="8dp"/>
+
+        <!--
+            TO DATE LABEL + BUTTON
+            Same behaviour as FROM button above.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TO"
+            android:textSize="11sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginEnd="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDateTo"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10-07-2026"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
 </LinearLayout>
