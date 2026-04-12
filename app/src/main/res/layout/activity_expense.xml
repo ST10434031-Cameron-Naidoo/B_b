@@ -233,12 +233,29 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:clipToPadding="false"/>
-    
+
     <!--
         The Activity must set a LayoutManager in code or
         the list will not display anything:
         rvExpenses.layoutManager = LinearLayoutManager(this)
         rvExpenses.adapter = expenseAdapter
     -->
+
+    <!--
+         ADD EXPENSE BUTTON
+         Fixed at the bottom — always visible even while
+         scrolling the list above it.
+         Per UI mockup: "ADD EXPENSE +" anchors the bottom.
+         Tapping navigates to AddExpenseActivity.
+          -->
+    
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD EXPENSE +"
+        android:textSize="15sp"
+        android:paddingVertical="14dp"
+        android:layout_margin="16dp"/>
 
 </LinearLayout>
