@@ -33,6 +33,55 @@
         android:padding="14dp"
         android:gravity="center_vertical">
 
+        <!--
+            Horizontal LinearLayout — children sit side by side:
+            [Category Icon Circle]  [Expense Details]  [Receipt Icon]
+
+            gravity="center_vertical" keeps all three sections
+            vertically centred relative to each other even if
+            the middle details section is taller than the icon.
+        -->
+
+        <!--
+             LEFT: CATEGORY ICON WITH COLOURED CIRCLE
+             FrameLayout stacks children on top of each other.
+             The circle View sits at the bottom layer.
+             The icon ImageView sits centred on top of it.
+              -->
+        <FrameLayout
+            android:layout_width="46dp"
+            android:layout_height="46dp">
+
+            <!--
+                THE COLOURED CIRCLE
+                This is the oval shape from circle_background.xml.
+                Its colour is set at runtime by the adapter:
+                vCategoryIconBackground.backgroundTintList =
+                    ColorStateList.valueOf(Color.parseColor(category.color))
+            -->
+            <View
+                android:id="@+id/vCategoryIconBackground"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/circle_background"/>
+
+            <!--
+                THE CATEGORY ICON
+                Sits centred on top of the circle.
+                Set by the adapter based on category.iconName.
+                layout_gravity="center" centres it inside
+                the 46dp x 46dp FrameLayout.
+            -->
+            <ImageView
+                android:id="@+id/ivCategoryIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_category"
+                android:contentDescription="Category icon"/>
+
+        </FrameLayout>
+
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
